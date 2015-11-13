@@ -14,6 +14,7 @@ public interface GuessNumberIf {
         LESS, EQUAL, BIGGER;
     }
     public int getRandomNumber(); 
+    /* zahl1 ist die Zufallszahl, zahl2 der Userinput */
     public GuessNumberResult compare(int zahl1, int zahl2) throws GuessNumberException;
 }
 

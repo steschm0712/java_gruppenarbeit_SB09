@@ -21,7 +21,7 @@ public class BackEnd implements GuessNumberIf {
         int zahl;
         double rand = random();
         
-        zahl = (int) (rand * 100) % 100;
+        zahl = (int) ((rand * 100) % 100)+1;
         
         return zahl;
     }
@@ -30,9 +30,9 @@ public class BackEnd implements GuessNumberIf {
     public GuessNumberResult compare(int zahl1, int zahl2) throws GuessNumberException {
         
         if (zahl1 > zahl2) {
-            return GuessNumberResult.BIGGER;
-        } else if (zahl1 < zahl2) {
             return GuessNumberResult.LESS;
+        } else if (zahl1 < zahl2) {
+            return GuessNumberResult.BIGGER;
         } else if (zahl1 == zahl2) {
             return GuessNumberResult.EQUAL;        
         } else {
