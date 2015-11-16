@@ -17,23 +17,23 @@ public class BackEnd implements GuessNumberIf {
     }
     
     @Override
-    public int getRandomNumber() {
+    public int getRandomNumber(int size) {
         int zahl;
         double rand = random();
         
-        zahl = (int) ((rand * 100) % 100)+1;
+        zahl = (int) ((rand * size) % size)+1;
         
         return zahl;
     }
     
     @Override
-    public GuessNumberResult compare(int zahl1, int zahl2) throws GuessNumberException {
+    public GuessNumberResult compare(int random, int number) throws GuessNumberException {
         
-        if (zahl1 > zahl2) {
+        if (random > number) {
             return GuessNumberResult.LESS;
-        } else if (zahl1 < zahl2) {
+        } else if (random < number) {
             return GuessNumberResult.BIGGER;
-        } else if (zahl1 == zahl2) {
+        } else if (random == number) {
             return GuessNumberResult.EQUAL;        
         } else {
             throw new GuessNumberException("Something is wrong.");

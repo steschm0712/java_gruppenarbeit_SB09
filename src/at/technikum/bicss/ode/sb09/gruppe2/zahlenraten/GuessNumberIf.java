@@ -11,11 +11,11 @@ package at.technikum.bicss.ode.sb09.gruppe2.zahlenraten;
  */
 public interface GuessNumberIf {
     public enum GuessNumberResult {
-        LESS, EQUAL, BIGGER;
+        BIGGER, EQUAL, LESS;
     }
-    public int getRandomNumber(); 
+    public int getRandomNumber(int size); 
     /* zahl1 ist die Zufallszahl, zahl2 der Userinput */
-    public GuessNumberResult compare(int zahl1, int zahl2) throws GuessNumberException;
+    public GuessNumberResult compare(int random, int number) throws GuessNumberException;
 }
 
 
